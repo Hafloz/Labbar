@@ -7,7 +7,7 @@ public class ValidityCheck {
 		ArrayList<Integer> samlaTal = new ArrayList<Integer>();
 
 		for (int i = 0; i < number.length(); i++) {
-			tmp = Character.digit(number.charAt(i), 10);
+			tmp = Character.digit(number.charAt(i), 10); //Gör varje tal i forloopen till siffra
 			
 			if ((i % 2) == 0) { //Kollar ifall talet ska multipliceras eller ej 
 				tmp = tmp * 2;
@@ -22,10 +22,10 @@ public class ValidityCheck {
 				samlaTal.add(tmp);
 			}
 		}
-		for (int elem : samlaTal) {
+		for (int elem : samlaTal) {//Forloop som summerar ihop siffrorna från arrayen samlaTal
 			tmp2 = tmp2 + elem;
 		}
-		if (tmp2 % 10 == 0 && checkInput(number)) {
+		if (tmp2 % 10 == 0 && checkInput(number)) { //Ifall talet går att dela jämt, samt är rätt input blir den true, annars false
 			return true;
 		} else
 			return false;
